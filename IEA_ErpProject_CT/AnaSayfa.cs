@@ -76,6 +76,18 @@ namespace IEA_ErpProject_CT
                 tvMenu.Nodes[0].Nodes.Add("Stok Durum");
 
             }
+            else if (gelen == "konsinye")
+            {
+                tvMenu.Nodes.Add("Konsinye");
+                tvMenu.Nodes[0].Nodes.Add("Gonderim");
+                tvMenu.Nodes[0].Nodes[0].Nodes.Add("Konsinye Gonderim");
+                tvMenu.Nodes[0].Nodes[0].Nodes.Add("Konsinye Gonderim Listesi");
+
+                tvMenu.Nodes[0].Nodes.Add("Cikis");
+                tvMenu.Nodes[0].Nodes[1].Nodes.Add("Konsinye Cikis");
+                tvMenu.Nodes[0].Nodes[1].Nodes.Add("Konsinye Cikis Listesi");
+
+            }
 
         }
 
@@ -180,6 +192,14 @@ namespace IEA_ErpProject_CT
 
                 f.StokDurumAc();
             }
+            if (isim == "Konsinye Gonderim" && Application.OpenForms["KonsinyeGonderim"] == null)
+            {
+                //HastanelerListesi frm = new HastanelerListesi();
+                //frm.MdiParent = Form.ActiveForm;
+                //frm.MdiParent = Application.OpenForms["AnaSayfa"] as AnaSayfa;
+
+                f.KonsinyeGonderimAc();
+            }
         }
 
         private void btnUrungiris_Click(object sender, EventArgs e)
@@ -236,6 +256,13 @@ namespace IEA_ErpProject_CT
             {
                 panel1.Width = 200;
             }
+        }
+
+        private void btnKonsinye_Click(object sender, EventArgs e)
+        {
+            lblMenu.Text = btnKonsinye.Text;
+            MenuOlustur("konsinye");
+
         }
     }
 }

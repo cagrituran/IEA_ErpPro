@@ -105,3 +105,24 @@ Enable-Migrations -ContextTypeName ErpProContext
 add-migration Init
 update-database
 codefirst kullanarak giris ekrani yaptik
+---------------------------------------------------08.03.22-------------------------------------------------------
+Girilen user bilgisinin ekranda gözükmesi icinn 2 label 1 picturebox ekledik ve girisekranı.cs'in icine gözükmesi icin kodları ekledik
+Sonrasında GirisEkranina bir cıkıs butonu ekledik ve girisekranının propertisinden AcceptButtonu ve CancelButtonu giriş ve cıkıs butonlarını ekledik ve böylece enter ve esc tuslarıyla giris cikis yapabiliyoruz
+flow layout panel ile butonları icine alarak kücültünce teke düşmesi saglanıyor yukardaki collapse butonu ile belirli bir widthe düşürme o widthten tekrar yukarıya cıkma yapıldı
+Konsinyeİslemleri klasörü acıldı ve codefirst ile yazılmaya devam edildi
+KonsinyeGonderim designi icin urungiris designı alındı ve yapıstırıldı datagridview ve yazılar degistirildi
+Amacımız Lotserinoya tıkladıgımızda bütün lotserinolarının oldugu bütün nolarının cıkmasını saglayan bir liste acmak
+Sonra Code icine tblKonsinyeGonderim classı acıldı
+inheritance,interface anlatıldı
+ödev: propun icinde get ve set arastırılacak (access modifier alır mı ? private set; gibi) kullanım senaryolarını arastır 
+tblKonsinyeGonderim propları yazıldı
+ public DbSet<tblKonsinyeGonderim> tblKonsinyeGonderimler { get; set; } Context'in icine yazıldı ( amac dbdekini burada class olarak bunu kullanmak sağlıyor)
+add-migration AddKonsinyeGonderim
+update-database
+Foreign Key baglantısı tblKonsinyeGonderim icine yazıldı
+-----------------------------------------------------09.03.22-----------------------------------------------------
+Foreign Key ile ErpModelde yer alan tblKonsinyeGonderimler bulununca hata verdigi icin kaldırıldı ve calıstıgı kontrol edilmesi icin dependency injection ile KonsinyeGonderim icin codefirst ile olusturulan tablolara erisildi ve YeniKaydet metodu yazıldı ve calıstı fakat dependency injection bum oldugu icin newleyerek kullandık
+AnaSayfa designına buton ekledik ve buna Konsinye dedik sonrasında Anasayfada Butona tıkladıgımızda Nodeların acılması icin kodlar yazıldı
+Ardından yazdıgımızda UrunKodlarının cıkması icin UrunGiristen EditingControlShowing kısmı araklandı KonsinyeGonderim'e yapıstırıldı
+LotBul formu eklendi LotSeri No ' ya  ok tuslarıyla geldigimizde LotBul acılması LotBul'a tıklandıgında eski forma o bilgi eklenmesi gerekiyor o yüzden SelectionChanged Eventine o hücreye gelindiginde LotBul acılması saglandı
+LotBula veriler aktarıldı ve doubleclick atıldıgında KonsinyeGonderim'e veriler tasındı ( newlemeden çünkü form zaten arkada acık)
