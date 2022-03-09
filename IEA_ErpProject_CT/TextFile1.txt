@@ -1,0 +1,107 @@
+﻿urunkayit Load kismina Urunıdnin textini uidno propuna esitledik ve textboxu readonly yaptık
+2 tane sanal buton tanımladık ve butonun bir tanesi firmalarlistesine çift tıklayınca veri alabilmemiz için methodu tanımladık fakat doubleclick attıgımızda firmagiriş açıldıgı için kodsal düzenlemeler yapıldı
+UrunKayit Designının GridViewine gerekli bilgiler eklendi , eksik olan kısımlarda üst kısma eklendi
+Kaydet butonunun metodu yazıldı,Temizle metodu yazıldı,tblurunkayitust ile tblfirmalar ile fk olusturuldu ve yenikayitin icine kodu yazıldı,UrunKayitListesi için listele metodu yazıldı
+------------------------------------------23.02.22-----------------------------------------------------------------
+UrunKAyitListesine Liste doubleclick yapıldı ve metod yazıldı Listeye uidno(görünmez) eklendi ve bu uidno buradan alındı secimUId'ye eşitlendi önce ürün girişten gitmesi ürünlistesine gitme durumu(Secim=true) kodları yazıldı ve buna dair hatalar düzeltildi
+UrunKayitUst tablosuna KullanimSuresi eklendi ardından direk ürünlistesinden ( secim=false) gitme durumun kodları yazıldı , Güncelle metodu yazıldı , row eklemek amacıyla bi panel bi buton ekleyip onun kodlarını yazdık , ekstra bi kayıt ekleyemedigimiz için datagridviewin durum checkboxu ekledik
+-----------------------------------------24.02.22-----------------------------------------------------------------
+Güncelle metodu düzeltildi
+---------------------
+List<tblUrunKayitAlt> alt = _db.tblUrunKayitAlt.Where(s => s.Uid == a).ToList();
+            int ii=0;
+            foreach (var uAlt in alt)
+            {
+                if ((bool)Liste.Rows[ii].Cells[9].Value != true)
+                {
+                    int indexId = alt[ii].Id;
+                    //alt[ii] = _db.tblUrunKayitAlt.FirstOrDefault(s => s.Id == indexId);
+                    uAlt.Aciklama = TxtAciklamaTr.Text;
+                    uAlt.BirimFiyat = Convert.ToDecimal(TxtBirimFiyat.Text);
+                    uAlt.BransAdi = "";
+                    uAlt.GMDMKodu = Liste.Rows[ii].Cells[0].Value.ToString();
+                    uAlt.UNSPCKodu = Liste.Rows[ii].Cells[1].Value.ToString();
+                    uAlt.KullanimDisi = Convert.ToBoolean(Liste.Rows[ii].Cells[3].Value);
+                    uAlt.SB = Convert.ToBoolean(Liste.Rows[ii].Cells[2].Value);
+                    uAlt.MinFiyat = Convert.ToDecimal(TxtMinFiyat.Text);
+                    uAlt.ParaBirimi = txtParaBirim.Text;
+                    uAlt.Sinif = TxtSinif.Text;
+                    uAlt.Sut = Liste.Rows[ii].Cells[5].Value.ToString();
+                    uAlt.SutFiyat = Convert.ToDecimal(Liste.Rows[ii].Cells[6].Value);
+                    uAlt.SutAciklama = Liste.Rows[ii].Cells[7].Value != null ? Liste.Rows[ii].Cells[7].Value.ToString() : "";
+
+                    uAlt.Ubb = Liste.Rows[ii].Cells[4].Value.ToString();
+                    uAlt.UTS = Convert.ToBoolean(Liste.Rows[ii].Cells[8].Value);
+                    uAlt.Uid = int.Parse(TxtUrunId.Text);
+                    uAlt.UIKodu = TxtUrunKodu.Text;
+                    ii++;
+                }
+            }
+
+            tblUrunKayitAlt[] yeni = new tblUrunKayitAlt[Liste.RowCount].ToArray();
+            for (int i = 0; i < Liste.RowCount; i++)
+            {
+                if ((bool)Liste.Rows[i].Cells[9].Value == true)
+                {
+                    yeni[i] = new tblUrunKayitAlt();
+                    yeni[i].Aciklama = TxtAciklamaTr.Text;
+                    yeni[i].BirimFiyat = Convert.ToDecimal(TxtBirimFiyat.Text);
+                    yeni[i].BransAdi = "";
+                    yeni[i].GMDMKodu = Liste.Rows[i].Cells[0].Value.ToString();
+                    yeni[i].UNSPCKodu = Liste.Rows[i].Cells[1].Value.ToString();
+                    yeni[i].KullanimDisi = Convert.ToBoolean(Liste.Rows[i].Cells[3].Value);
+                    yeni[i].SB = Convert.ToBoolean(Liste.Rows[i].Cells[2].Value);
+                    yeni[i].MinFiyat = Convert.ToDecimal(TxtMinFiyat.Text);
+                    yeni[i].ParaBirimi = txtParaBirim.Text;
+                    yeni[i].Sinif = TxtSinif.Text;
+                    yeni[i].Sut = Liste.Rows[i].Cells[5].Value.ToString();
+                    yeni[i].SutFiyat = Convert.ToDecimal(Liste.Rows[i].Cells[6].Value);
+                    yeni[i].SutAciklama = Liste.Rows[i].Cells[7].Value != null
+                        ? Liste.Rows[i].Cells[7].Value.ToString()
+                        : "";
+                    yeni[i].Ubb = Liste.Rows[i].Cells[4].Value.ToString();
+                    yeni[i].UTS = Convert.ToBoolean(Liste.Rows[i].Cells[8].Value);
+                    yeni[i].Uid = int.Parse(TxtUrunId.Text);
+                    yeni[i].UIKodu = TxtUrunKodu.Text;
+                    _db.tblUrunKayitAlt.Add(yeni[i]);
+                }
+            }
+            _db.SaveChanges();
+
+------------------------------------------
+Satir sil butonu koyuldu ve click eventi yazıldı , id columnu visible kaldırılarak eklendi , sil butonuna tıkladık ve idyi görebilmek için label ekledik ve idnin görülmesi sağlandı ve sil butonuna basıldıgında üsttabloya ve alttabloya o idye ait verilerin silinmesi sağlandı
+UrunGirisIslemleri folderı açıldı içine 2 tane form açıldı(UrunGiris,UrunlerGirisListesi),Stok Folderı açıldı içine (StokDurum formu eklendi)
+StokDurum designi düzenlendi , (SplitContainer alındı,panel alıp sola yaslandı,splitter koyuldu,1 tane yukarıya datagridview koyuldu alt taraf içinde 2 datagridview koyup 2 tane split container koyup sonra ortaya boş kalan yere de datagridview koyuldu) sonrasında ana sayfaya buton eklenerek yeni sekme açılması sağlandı ve metodları anasayfaya yazıldı
+----------------------------------------------------25.02.22---------------------------------------------------------
+StokDurum formunun açılması için AnaSayfaya ve Formlar kısmına kodlar yazıldı
+tblUrunGirisUst tablosu olusturuldu ve update edildi,tblUrunGirisAlt tablosu olusturuldu update edildi
+tblStokDurum tablosu olusturuldu ve 2 adet index konuldu bunun sebebi çok fazla veri oldugu için index atayarak o index değişkenine göre arama yaparak daha hızlı calısması sağlanır
+CheckConstraint 3 lük bir nvarchar değeri için örneğin 3den fazla bi değer girildiğinde kaydı engellemek için yapılır
+UrunGiris Designi düzenlendi sonrasında çift tıklayarak içine kodlar yazılmaya başlandı fakat açılan listeye çift tıkladıgımızda başka bir forma geçtigi için bunu düzelmek adına ..Listesi(personel ve hepsi için) içindeki doubleclick kodlarının içine çeşitli kodlar yazılarak düzeltildi
+----------------------------------------------------01.03.22------------------------------------------------------
+Listelerde bir sorun vardı FirmalarListesindeki doubleclicki alıp digerleri listelerin dbclickine yerlestirildi ve urungiris icin sanal buton olusturuldu
+ÜrünKoduna erişmek amacıyla combobox olusturuldu ve combodoldur metodu yazıldı,ardından bilgileri aktarmak için string array olusturuldu ve degerler bunun icine atıldı ardından textin icine yazıldıgında harflerin gelmesi için designdan listenin propertiesine gelip eventlerinden EditingControlShowing icerisine olusturulan Array gönderilerek yazılan harfe göre ürünkodlarının gelmesi sağlandı sonra comboboxa atmadan direk array'a atarak çözdügümüz icin comboboxu sildik
+UrunKodu ve LotSeriNo columnları doldugunda bir işlem yapmamız için Listenin eventinden CellEndEdit'e dbclick atarak kodlar yazılmaya başlandı
+----------------------------------------------------02.03.22------------------------------------------------------
+enter veya taba basmadan geçtigimizde 1 veya 0 yazmadıgı icin bunun cözümü icin altına columnindex 5 için kontrol kosulu yazıldı o olmadı geri döndük hücrelerin içinde a ya basarken her hücrede getirdigi için düzelmemiz gerekti ve 
+Barkodun gözükmesi için visible true yapıldı ve hücrede ürünkodu ve lotserinonun birlesmesinden olustugu için bunu hücrede gözükmesi sagladık
+kullanımsüresini dbden çekip son kullanma tarihini gösterilmesini sağladık
+Kaydet butonunun methodu yazıldı
+tblgirisuste aciklama ekledik daha sonrasında kayıt işlemleri yapıldı ve utsde kayıt ederken tıklamadan gectigimizde nullreferenceexception hatası geldiği için propertiesinden falsevalue 0 truefalse 1 yapıp default değer ataması yapıldı
+boş girdigimizde hata gelmesin diye nota edit columdan NullValue'sına "" yazarak hata getirmemesini sağlıyoruz
+Yeni bir kayıt mı yoksa üstüne eklenen bir kayıtmı oldugu durumlar ele alanarak kodlar yazıldı(tblstokdurum tablo arrayi acılarak bu durumlar islendi ve dbye kaydedildi)
+Trigger yazılarak da tblStokDurum tablosunua kaydetmesi sağlandı
+----------------------------------------------------04.03.22------------------------------------------------------
+UrunGirisKayitta Giris No'nun gözükmesi icin önce numaralara sonra UrunGiris'e kod yazıldı , Temizle metodu yazıldı
+Listele metodu yazıldı 
+UrunGirisListesinde Dgv view doubleclick atılınca urungirise gidip ilgili kaydın cıkması icin gereken kodlar yazıldı
+Ardından tblUrunGirisAltta bir güncelleme yapmak için kayıtta bulunan designda satır ekleme butonu ve kodları alındı
+güncelleme yapıldıgında stok un da güncellenmesi yapıldı
+----------------------------------------------------07.03.22------------------------------------------------------
+ssms 'den trigger yerine view(degerleri tam dogru toplamıyor) ile güncelleme islemi yapmayı denedik fakat update modaldan viewi entity e atamadıgımız için ve netten c# linq group by arastırılarak stackoverflowdan kodunu alıp daha sonrasında stokdurum designını degistirdik
+liste1 ve liste2 kodları yazıldı ve viewin yapması gereken şeyi liste2de sorgu kullanarak yaptık
+CodeFirst denemelerine geçmek için app.confige bir add kısmı ekledik sonra entity için bir folder onun icine ErpProContext classı açtık ve amacımız classlar sayesinde dbde tablo olusturmak bunları aktarmak icinde Context classını kullanacagız
+Enable-Migrations -ContextTypeName ErpProContext
+add-migration Init
+update-database
+codefirst kullanarak giris ekrani yaptik

@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F91D2565-1BA3-46CB-8FB2-C6A443D46A15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IEA_ErpProject_CT</RootNamespace>
+    <AssemblyName>IEA_ErpProject_CT</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaSayfa.Designer.cs">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Doktorlar\DoktorGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Doktorlar\DoktorGiris.Designer.cs">
+      <DependentUpon>DoktorGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Doktorlar\DoktorlarListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Doktorlar\DoktorlarListesi.Designer.cs">
+      <DependentUpon>DoktorlarListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Doktorlar\Unvan.cs" />
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmaDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmaDetay.Designer.cs">
+      <DependentUpon>FirmaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmaDetayGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmaDetayGoster.Designer.cs">
+      <DependentUpon>FirmaDetayGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmaGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmaGiris.Designer.cs">
+      <DependentUpon>FirmaGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmalarListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmalarListesi.Designer.cs">
+      <DependentUpon>FirmalarListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Firmalar\FirmaTip.cs" />
+    <Compile Include="BilgiGirisIslemleri\Hastaneler\HastaneDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Hastaneler\HastaneDetay.Designer.cs">
+      <DependentUpon>HastaneDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Hastaneler\HastaneDetayGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Hastaneler\HastaneDetayGoster.Designer.cs">
+      <DependentUpon>HastaneDetayGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Hastaneler\HastaneGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Hastaneler\HastaneGiris.Designer.cs">
+      <DependentUpon>HastaneGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Hastaneler\HastanelerListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Hastaneler\HastanelerListesi.Designer.cs">
+      <DependentUpon>HastanelerListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Personeller\PersonelGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Personeller\PersonelGiris.Designer.cs">
+      <DependentUpon>PersonelGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Personeller\PersonellerListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Personeller\PersonellerListesi.Designer.cs">
+      <DependentUpon>PersonellerListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Urunler\UrunKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Urunler\UrunKayit.Designer.cs">
+      <DependentUpon>UrunKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Urunler\UrunKayitListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGirisIslemleri\Urunler\UrunKayitListesi.Designer.cs">
+      <DependentUpon>UrunKayitListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Code\BaseEntity.cs" />
+    <Compile Include="Entity\Code\ErpProContext.cs" />
+    <Compile Include="Entity\Code\MyInitializer.cs" />
+    <Compile Include="Entity\Code\tblKonsinyeGonderim.cs" />
+    <Compile Include="Entity\Code\tblUser.cs" />
+    <Compile Include="Entity\ErpModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErpModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ErpModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ErpModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErpModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sehirler.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sysdiagrams.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblDepartmanlar.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblDoktorlar.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblFirmaDetaylar.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblFirmalar.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblHastaneDetaylar.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblHastaneler.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblHastanetip.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblPersoneller.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblStokDurum.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUrunGirisAlt.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUrunGirisUst.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUrunKayitAlt.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tblUrunKayitUst.cs">
+      <DependentUpon>ErpModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fonksiyonlar\Formlar.cs" />
+    <Compile Include="Fonksiyonlar\Numaralar.cs" />
+    <Compile Include="Fonksiyonlar\Resimler.cs" />
+    <Compile Include="Giris\GirisEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giris\GirisEkrani.Designer.cs">
+      <DependentUpon>GirisEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\Cikis\KonsinyeCikis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\Cikis\KonsinyeCikis.Designer.cs">
+      <DependentUpon>KonsinyeCikis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\Cikis\KonsinyeCikisListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\Cikis\KonsinyeCikisListesi.Designer.cs">
+      <DependentUpon>KonsinyeCikisListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\Gonderim\KonsinyeGonderim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\Gonderim\KonsinyeGonderim.Designer.cs">
+      <DependentUpon>KonsinyeGonderim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\Gonderim\KonsinyeGonderimListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\Gonderim\KonsinyeGonderimListesi.Designer.cs">
+      <DependentUpon>KonsinyeGonderimListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203082001151_AllInit.cs" />
+    <Compile Include="Migrations\202203082001151_AllInit.designer.cs">
+      <DependentUpon>202203082001151_AllInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stok\StokDurum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\StokDurum.Designer.cs">
+      <DependentUpon>StokDurum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UrunGirisIslemleri\UrunGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrunGirisIslemleri\UrunGiris.Designer.cs">
+      <DependentUpon>UrunGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UrunGirisIslemleri\UrunlerGirisListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrunGirisIslemleri\UrunlerGirisListesi.Designer.cs">
+      <DependentUpon>UrunlerGirisListesi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnaSayfa.resx">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Doktorlar\DoktorGiris.resx">
+      <DependentUpon>DoktorGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Doktorlar\DoktorlarListesi.resx">
+      <DependentUpon>DoktorlarListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Firmalar\FirmaDetay.resx">
+      <DependentUpon>FirmaDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Firmalar\FirmaDetayGoster.resx">
+      <DependentUpon>FirmaDetayGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Firmalar\FirmaGiris.resx">
+      <DependentUpon>FirmaGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Firmalar\FirmalarListesi.resx">
+      <DependentUpon>FirmalarListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Hastaneler\HastaneDetay.resx">
+      <DependentUpon>HastaneDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Hastaneler\HastaneDetayGoster.resx">
+      <DependentUpon>HastaneDetayGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Hastaneler\HastaneGiris.resx">
+      <DependentUpon>HastaneGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Hastaneler\HastanelerListesi.resx">
+      <DependentUpon>HastanelerListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Personeller\PersonelGiris.resx">
+      <DependentUpon>PersonelGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Personeller\PersonellerListesi.resx">
+      <DependentUpon>PersonellerListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Urunler\UrunKayit.resx">
+      <DependentUpon>UrunKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilgiGirisIslemleri\Urunler\UrunKayitListesi.resx">
+      <DependentUpon>UrunKayitListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giris\GirisEkrani.resx">
+      <DependentUpon>GirisEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonsinyeIslemleri\Gonderim\KonsinyeGonderim.resx">
+      <DependentUpon>KonsinyeGonderim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203082001151_AllInit.resx">
+      <DependentUpon>202203082001151_AllInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Stok\StokDurum.resx">
+      <DependentUpon>StokDurum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UrunGirisIslemleri\UrunGiris.resx">
+      <DependentUpon>UrunGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UrunGirisIslemleri\UrunlerGirisListesi.resx">
+      <DependentUpon>UrunlerGirisListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Entity\ErpModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ErpModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\ErpModel.edmx.diagram">
+      <DependentUpon>ErpModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Ara32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RightLeft2Red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\ErpModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ErpModel.Context.cs</LastGenOutput>
+      <DependentUpon>ErpModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\ErpModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ErpModel.edmx</DependentUpon>
+      <LastGenOutput>ErpModel.cs</LastGenOutput>
+    </Content>
+    <None Include="res\plus.png" />
+    <None Include="res\print.png" />
+    <None Include="res\user.png" />
+    <None Include="res\user1.png" />
+    <None Include="res\user2.png" />
+    <Content Include="TextFile1.txt" />
+    <None Include="res\clean.png" />
+    <None Include="res\exit-64.png" />
+    <None Include="res\cop24x24.png" />
+    <None Include="res\Update32x32.png" />
+    <None Include="res\Save-icon64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
