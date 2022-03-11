@@ -255,9 +255,23 @@
     <Compile Include="KonsinyeIslemleri\Gonderim\KonsinyeGonderimListesi.Designer.cs">
       <DependentUpon>KonsinyeGonderimListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="KonsinyeIslemleri\LotBul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonsinyeIslemleri\LotBul.Designer.cs">
+      <DependentUpon>LotBul.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202203082001151_AllInit.cs" />
     <Compile Include="Migrations\202203082001151_AllInit.designer.cs">
       <DependentUpon>202203082001151_AllInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203111117269_UpdateBaseEntity.cs" />
+    <Compile Include="Migrations\202203111117269_UpdateBaseEntity.designer.cs">
+      <DependentUpon>202203111117269_UpdateBaseEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203111207561_AddGonderimId.cs" />
+    <Compile Include="Migrations\202203111207561_AddGonderimId.designer.cs">
+      <DependentUpon>202203111207561_AddGonderimId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -331,8 +345,20 @@
     <EmbeddedResource Include="KonsinyeIslemleri\Gonderim\KonsinyeGonderim.resx">
       <DependentUpon>KonsinyeGonderim.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KonsinyeIslemleri\Gonderim\KonsinyeGonderimListesi.resx">
+      <DependentUpon>KonsinyeGonderimListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonsinyeIslemleri\LotBul.resx">
+      <DependentUpon>LotBul.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203082001151_AllInit.resx">
       <DependentUpon>202203082001151_AllInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203111117269_UpdateBaseEntity.resx">
+      <DependentUpon>202203111117269_UpdateBaseEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203111207561_AddGonderimId.resx">
+      <DependentUpon>202203111207561_AddGonderimId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

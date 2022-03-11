@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IEA_ErpProject_CT.Entity.Code;
 
 namespace IEA_ErpProject_CT.Fonksiyonlar
 {
     public class Numaralar
     {
-        private readonly Entity.Erp102EvEntities _db = new Entity.Erp102EvEntities();   
+        private readonly Entity.Erp102EvEntities _db = new Entity.Erp102EvEntities();
+        private readonly ErpProContext _code = new ErpProContext();
         public string UidNo()
         {
             try
@@ -31,6 +33,21 @@ namespace IEA_ErpProject_CT.Fonksiyonlar
             try
             {
                 var numara = (from s in _db.tblUrunGirisUst orderby s.Id descending select s).First().GirisId;
+                numara++;
+                string num = numara.ToString().PadLeft(7, '0');
+                return num;
+            }
+            catch (Exception e)
+            {
+                return "0000001";
+            }
+        }
+        public string KonGonderimNo()
+        {
+            try
+            {
+                var numara = (from s in _code.TblKonsinyeGonderimler orderby s.Id descending select s).First()
+                    .GonderimId;
                 numara++;
                 string num = numara.ToString().PadLeft(7, '0');
                 return num;

@@ -43,6 +43,7 @@
             this.TxtSifre.PasswordChar = '*';
             this.TxtSifre.Size = new System.Drawing.Size(100, 20);
             this.TxtSifre.TabIndex = 1;
+            this.TxtSifre.Text = "1234";
             // 
             // TxtKullaniciAdi
             // 
@@ -50,6 +51,7 @@
             this.TxtKullaniciAdi.Name = "TxtKullaniciAdi";
             this.TxtKullaniciAdi.Size = new System.Drawing.Size(100, 20);
             this.TxtKullaniciAdi.TabIndex = 0;
+            this.TxtKullaniciAdi.Text = "CagriT";
             // 
             // label2
             // 
@@ -89,6 +91,7 @@
             this.btnCikis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCikis.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.exit_64;
             this.btnCikis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCikis.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCikis.Location = new System.Drawing.Point(59, 102);
             this.btnCikis.Name = "btnCikis";
             this.btnCikis.Size = new System.Drawing.Size(54, 46);

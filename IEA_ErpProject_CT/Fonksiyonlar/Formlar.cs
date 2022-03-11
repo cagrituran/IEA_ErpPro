@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IEA_ErpProject_CT.KonsinyeIslemleri.Gonderim;
 
 namespace IEA_ErpProject_CT.Fonksiyonlar
 {
@@ -162,6 +163,38 @@ namespace IEA_ErpProject_CT.Fonksiyonlar
         public int StokDurumAc(bool secim = false)
         {
             StokDurum frm = new StokDurum();
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
+            }
+
+            return AnaSayfa.Aktarma;
+        }
+        public int KonsinyeGonderimAc(bool secim = false)
+        {
+            KonsinyeGonderim frm = new KonsinyeGonderim();
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
+            }
+
+            return AnaSayfa.Aktarma;
+        }
+        public int KonGirisListesiAc(bool secim = false)
+        {
+            KonsinyeGonderimListesi frm = new KonsinyeGonderimListesi();
             if (secim)
             {
                 frm.Secim = true;
