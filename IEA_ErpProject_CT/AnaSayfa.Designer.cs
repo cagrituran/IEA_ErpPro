@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaSayfa));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,13 +45,14 @@
             this.blgGiris = new System.Windows.Forms.Button();
             this.btnUrungiris = new System.Windows.Forms.Button();
             this.btnStokIslemleri = new System.Windows.Forms.Button();
+            this.btnKonsinye = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMenu = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSolUstCollapse = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.splitter2 = new System.Windows.Forms.Splitter();
-            this.btnKonsinye = new System.Windows.Forms.Button();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -184,10 +187,17 @@
             // tvMenu
             // 
             this.tvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvMenu.ImageIndex = 0;
+            this.tvMenu.ImageList = this.ımageList1;
             this.tvMenu.Location = new System.Drawing.Point(0, 0);
             this.tvMenu.Name = "tvMenu";
+            this.tvMenu.SelectedImageIndex = 1;
+            this.tvMenu.ShowLines = false;
+            this.tvMenu.ShowPlusMinus = false;
+            this.tvMenu.ShowRootLines = false;
             this.tvMenu.Size = new System.Drawing.Size(258, 286);
             this.tvMenu.TabIndex = 0;
+            
             this.tvMenu.DoubleClick += new System.EventHandler(this.tvMenu_DoubleClick);
             // 
             // flowLayoutPanel1
@@ -231,6 +241,16 @@
             this.btnStokIslemleri.Text = "Stok İşlemleri";
             this.btnStokIslemleri.UseVisualStyleBackColor = true;
             this.btnStokIslemleri.Click += new System.EventHandler(this.btnStokIslemleri_Click);
+            // 
+            // btnKonsinye
+            // 
+            this.btnKonsinye.Location = new System.Drawing.Point(195, 3);
+            this.btnKonsinye.Name = "btnKonsinye";
+            this.btnKonsinye.Size = new System.Drawing.Size(58, 38);
+            this.btnKonsinye.TabIndex = 3;
+            this.btnKonsinye.Text = "Konsinye İşlemleri";
+            this.btnKonsinye.UseVisualStyleBackColor = true;
+            this.btnKonsinye.Click += new System.EventHandler(this.btnKonsinye_Click);
             // 
             // panel2
             // 
@@ -299,15 +319,12 @@
             this.splitter2.TabIndex = 3;
             this.splitter2.TabStop = false;
             // 
-            // btnKonsinye
+            // ımageList1
             // 
-            this.btnKonsinye.Location = new System.Drawing.Point(195, 3);
-            this.btnKonsinye.Name = "btnKonsinye";
-            this.btnKonsinye.Size = new System.Drawing.Size(58, 38);
-            this.btnKonsinye.TabIndex = 3;
-            this.btnKonsinye.Text = "Konsinye İşlemleri";
-            this.btnKonsinye.UseVisualStyleBackColor = true;
-            this.btnKonsinye.Click += new System.EventHandler(this.btnKonsinye_Click);
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "closed.jpg");
+            this.ımageList1.Images.SetKeyName(1, "opened.png");
             // 
             // AnaSayfa
             // 
@@ -362,6 +379,7 @@
         public System.Windows.Forms.Label lblName;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnKonsinye;
+        private System.Windows.Forms.ImageList ımageList1;
     }
 }
 

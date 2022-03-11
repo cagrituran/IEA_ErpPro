@@ -44,7 +44,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtKonCariTur = new System.Windows.Forms.ComboBox();
             this.pnlUst = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
             this.spcUrunGiris = new System.Windows.Forms.SplitContainer();
             this.Liste = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,14 +67,8 @@
             this.SKTarihi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Durum = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRowsDelete = new System.Windows.Forms.Button();
             this.btnAddListeRow = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btnTemizle = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnRowsDelete = new System.Windows.Forms.Button();
             this.pnlUst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcUrunGiris)).BeginInit();
             this.spcUrunGiris.Panel1.SuspendLayout();
@@ -192,8 +192,10 @@
             this.TxtKonGonderimNo.Dock = System.Windows.Forms.DockStyle.Top;
             this.TxtKonGonderimNo.Location = new System.Drawing.Point(0, 25);
             this.TxtKonGonderimNo.Name = "TxtKonGonderimNo";
+            this.TxtKonGonderimNo.ReadOnly = true;
             this.TxtKonGonderimNo.Size = new System.Drawing.Size(281, 20);
             this.TxtKonGonderimNo.TabIndex = 24;
+            this.TxtKonGonderimNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -237,6 +239,16 @@
             this.pnlUst.Size = new System.Drawing.Size(1369, 47);
             this.pnlUst.TabIndex = 6;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.print;
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.Location = new System.Drawing.Point(293, 11);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(50, 31);
+            this.btnPrint.TabIndex = 17;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -247,6 +259,58 @@
             this.label1.Size = new System.Drawing.Size(164, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Konsinye Gonderim";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.exit_64;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(1312, 10);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(45, 30);
+            this.button5.TabIndex = 15;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.clean;
+            this.btnTemizle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTemizle.Location = new System.Drawing.Point(223, 11);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(50, 31);
+            this.btnTemizle.TabIndex = 14;
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.cop24x24;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Location = new System.Drawing.Point(156, 11);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(50, 31);
+            this.button3.TabIndex = 13;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.Update32x32;
+            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuncelle.Location = new System.Drawing.Point(91, 11);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(50, 31);
+            this.btnGuncelle.TabIndex = 12;
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // btnKaydet
+            // 
+            this.btnKaydet.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.Save_icon64x64;
+            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKaydet.Location = new System.Drawing.Point(27, 11);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(50, 31);
+            this.btnKaydet.TabIndex = 11;
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // spcUrunGiris
             // 
@@ -313,7 +377,6 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.Visible = false;
-            this.Id.Width = 22;
             // 
             // Sira
             // 
@@ -321,7 +384,6 @@
             this.Sira.HeaderText = "Sira";
             this.Sira.Name = "Sira";
             this.Sira.Visible = false;
-            this.Sira.Width = 31;
             // 
             // Barkod
             // 
@@ -369,7 +431,6 @@
             this.UrunId.HeaderText = "UrunId";
             this.UrunId.Name = "UrunId";
             this.UrunId.Visible = false;
-            this.UrunId.Width = 64;
             // 
             // Uts
             // 
@@ -421,16 +482,6 @@
             this.panel1.Size = new System.Drawing.Size(1076, 42);
             this.panel1.TabIndex = 5;
             // 
-            // btnRowsDelete
-            // 
-            this.btnRowsDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRowsDelete.Location = new System.Drawing.Point(985, 10);
-            this.btnRowsDelete.Name = "btnRowsDelete";
-            this.btnRowsDelete.Size = new System.Drawing.Size(57, 22);
-            this.btnRowsDelete.TabIndex = 4;
-            this.btnRowsDelete.Text = "Satir Sil";
-            this.btnRowsDelete.UseVisualStyleBackColor = true;
-            // 
             // btnAddListeRow
             // 
             this.btnAddListeRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -442,67 +493,15 @@
             this.btnAddListeRow.TabIndex = 2;
             this.btnAddListeRow.UseVisualStyleBackColor = true;
             // 
-            // btnPrint
+            // btnRowsDelete
             // 
-            this.btnPrint.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.print;
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrint.Location = new System.Drawing.Point(293, 11);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(50, 31);
-            this.btnPrint.TabIndex = 17;
-            this.btnPrint.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.exit_64;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(1312, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(45, 30);
-            this.button5.TabIndex = 15;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // btnTemizle
-            // 
-            this.btnTemizle.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.clean;
-            this.btnTemizle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTemizle.Location = new System.Drawing.Point(223, 11);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(50, 31);
-            this.btnTemizle.TabIndex = 14;
-            this.btnTemizle.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.cop24x24;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Location = new System.Drawing.Point(156, 11);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 31);
-            this.button3.TabIndex = 13;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.Update32x32;
-            this.btnGuncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuncelle.Location = new System.Drawing.Point(91, 11);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(50, 31);
-            this.btnGuncelle.TabIndex = 12;
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.BackgroundImage = global::IEA_ErpProject_CT.Properties.Resources.Save_icon64x64;
-            this.btnKaydet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnKaydet.Location = new System.Drawing.Point(27, 11);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(50, 31);
-            this.btnKaydet.TabIndex = 11;
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.btnRowsDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRowsDelete.Location = new System.Drawing.Point(985, 10);
+            this.btnRowsDelete.Name = "btnRowsDelete";
+            this.btnRowsDelete.Size = new System.Drawing.Size(57, 22);
+            this.btnRowsDelete.TabIndex = 4;
+            this.btnRowsDelete.Text = "Satir Sil";
+            this.btnRowsDelete.UseVisualStyleBackColor = true;
             // 
             // KonsinyeGonderim
             // 
@@ -513,6 +512,7 @@
             this.Controls.Add(this.pnlUst);
             this.Name = "KonsinyeGonderim";
             this.Text = "KonsinyeGonderim";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.KonsinyeGonderim_Load);
             this.pnlUst.ResumeLayout(false);
             this.pnlUst.PerformLayout();

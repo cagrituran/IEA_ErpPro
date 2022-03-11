@@ -39,12 +39,19 @@ namespace IEA_ErpProject_CT
         private void MenuOlustur(string gelen)
         {
             tvMenu.Nodes.Clear();
+            
+            
 
             if (gelen == "bilgi")
             {
+                
+
                 tvMenu.Nodes.Add("Hastaneler");
+                
                 tvMenu.Nodes[0].Nodes.Add("Hastane Listesi");
                 tvMenu.Nodes[0].Nodes.Add("Hastane Giriş");
+               
+
 
                 tvMenu.Nodes.Add("Doktorlar");
                 tvMenu.Nodes[1].Nodes.Add("Doktor Listesi");
@@ -88,6 +95,8 @@ namespace IEA_ErpProject_CT
                 tvMenu.Nodes[0].Nodes[1].Nodes.Add("Konsinye Cikis Listesi");
 
             }
+            
+            
 
         }
 
@@ -98,6 +107,7 @@ namespace IEA_ErpProject_CT
             {
                 isim = tvMenu.SelectedNode.Text;
             }
+
 
             if (isim == "Hastane Listesi" && Application.OpenForms["HastanelerListesi"] == null)
             {
@@ -264,5 +274,7 @@ namespace IEA_ErpProject_CT
             MenuOlustur("konsinye");
 
         }
+
+      
     }
 }

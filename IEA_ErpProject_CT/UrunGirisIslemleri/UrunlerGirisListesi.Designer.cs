@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtGirisAra = new System.Windows.Forms.TextBox();
             this.btnGirisBul = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.btnGirisBul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGirisBul.Location = new System.Drawing.Point(756, 6);
             this.btnGirisBul.Name = "btnGirisBul";
-            this.btnGirisBul.Size = new System.Drawing.Size(75, 23);
+            this.btnGirisBul.Size = new System.Drawing.Size(75, 25);
             this.btnGirisBul.TabIndex = 2;
             this.btnGirisBul.Text = "Giris Bul";
             this.btnGirisBul.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             this.AcikTr,
             this.GirisId});
             this.Liste.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Liste.Location = new System.Drawing.Point(0, 39);
+            this.Liste.Location = new System.Drawing.Point(0, 41);
             this.Liste.Name = "Liste";
-            this.Liste.Size = new System.Drawing.Size(1042, 506);
+            this.Liste.Size = new System.Drawing.Size(1042, 504);
             this.Liste.TabIndex = 5;
             this.Liste.DoubleClick += new System.EventHandler(this.Liste_DoubleClick);
             // 
@@ -132,9 +132,9 @@
             // GirisTarih
             // 
             this.GirisTarih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.GirisTarih.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.GirisTarih.DefaultCellStyle = dataGridViewCellStyle1;
             this.GirisTarih.HeaderText = "Giris Tarih";
             this.GirisTarih.Name = "GirisTarih";
             this.GirisTarih.Width = 79;
@@ -161,7 +161,7 @@
             this.pnlUst.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUst.Location = new System.Drawing.Point(0, 0);
             this.pnlUst.Name = "pnlUst";
-            this.pnlUst.Size = new System.Drawing.Size(1042, 39);
+            this.pnlUst.Size = new System.Drawing.Size(1042, 41);
             this.pnlUst.TabIndex = 4;
             // 
             // UrunlerGirisListesi

@@ -192,5 +192,21 @@ namespace IEA_ErpProject_CT.Fonksiyonlar
 
             return AnaSayfa.Aktarma;
         }
+        public int KonGirisListesiAc(bool secim = false)
+        {
+            KonsinyeGonderimListesi frm = new KonsinyeGonderimListesi();
+            if (secim)
+            {
+                frm.Secim = true;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frm.MdiParent = Form.ActiveForm;
+                frm.Show();
+            }
+
+            return AnaSayfa.Aktarma;
+        }
     }
 }
