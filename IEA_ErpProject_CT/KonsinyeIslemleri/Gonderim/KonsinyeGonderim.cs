@@ -102,6 +102,11 @@ namespace IEA_ErpProject_CT.KonsinyeIslemleri.Gonderim
                 //Kon[i].UpdatedUser = -1;
                 //Kon[i].isDeleted = false;
                 Kon[i].CariId = 1;
+                Kon[i].GonderimId = int.Parse(_n.KonGonderimNo());
+
+                var srgStok = _db.tblStokDurum.Find(UrunId);
+                srgStok.RafAdet -= Convert.ToInt32(Liste.Rows[i].Cells[6].Value);
+                srgStok.KonsinyeAdet += Convert.ToInt32(Liste.Rows[i].Cells[6].Value);
 
             }
             _code.TblKonsinyeGonderimler.AddRange(Kon);
@@ -214,6 +219,7 @@ namespace IEA_ErpProject_CT.KonsinyeIslemleri.Gonderim
         {
             Liste.Rows.Clear();
             var srg = _code.TblKonsinyeGonderimler.Where(s => s.GonderimId == id).ToList();
+            
             var srgStok = _db.tblStokDurum.ToList();
             
             if (srg.Count > 0)
